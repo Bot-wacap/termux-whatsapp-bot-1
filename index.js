@@ -20,9 +20,9 @@ const instagram = 'Instagram kamu';
 const aktif = 'Kapan bot aktif';
 const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
-            + 'FN:Nama kamu\n' // Nama kamu
-            + 'ORG:Nama bot;\n' // Nama bot
-            + 'TEL;type=CELL;type=VOICE;waid=6280000000000:+62 000-0000-0000\n' //Nomor whatsapp kamu
+            + 'FN:Uwiw-Bocah\n' // Nama kamu
+            + 'ORG:UW-BC BOT;\n' // Nama bot
+            + 'TEL;type=CELL;type=VOICE;waid=6287718593665:+62 877-1859-3665\n' //Nomor whatsapp kamu
             + 'END:VCARD'
 const
 {
@@ -74,7 +74,7 @@ fs.existsSync('./session.json') && conn.loadAuthInfo('./session.json') //create 
 //conn.connectOptions.agent = ProxyAgent ('http://1.0.180.120:8080')
 conn.connect();
 
-conn.on('user-presence-update', json => console.log(json.id + ' presence is => ' + json.type)) || console.log('Lexa Bot')
+conn.on('user-presence-update', json => console.log(json.id + ' presence is => ' + json.type)) || console.log('UWBC Bot')
 conn.on('message-status-update', json =>
 {
    const participant = json.participant ? ' (' + json.participant + ')' : '' // participant exists when the message is from a group
@@ -181,7 +181,7 @@ if (text.includes('.Owner')){
 conn.sendMessage(id, 'Silakan ulangi command dengan huruf kecil',MessageType.text, { quoted: m } );
 }
 if (text.includes('.owner')){
-conn.sendMessage(id, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: m } )
+conn.sendMessage(id, {displayname: "UwiwBocah", vcard: vcard}, MessageType.contact, { quoted: m } )
 }
 
   //Ganti nama grup
